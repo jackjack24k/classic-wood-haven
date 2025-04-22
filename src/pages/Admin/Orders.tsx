@@ -1,4 +1,3 @@
-
 import React from 'react'
 import AdminLayout from '@/components/layout/AdminLayout'
 import { Table, TableHeader, TableRow, TableHead, TableBody, TableCell } from "@/components/ui/table"
@@ -23,7 +22,6 @@ interface Order {
 const AdminOrders = () => {
   const { toast } = useToast();
   
-  // Fetch orders data
   const { data: orders = [], isLoading, error } = useQuery({
     queryKey: ['orders'],
     queryFn: async () => {
@@ -39,12 +37,12 @@ const AdminOrders = () => {
 
   const getStatusBadgeVariant = (status: string) => {
     switch (status.toLowerCase()) {
-      case 'pending': return undefined; // default blue
+      case 'pending': return 'default'; // blue
       case 'processing': return 'secondary'; // purple
       case 'shipped': return 'outline'; // outlined
-      case 'delivered': return 'success'; // custom success variant - you may need to add this to your theme
+      case 'delivered': return 'default'; // default instead of success
       case 'cancelled': return 'destructive'; // red
-      default: return undefined;
+      default: return 'default';
     }
   };
 

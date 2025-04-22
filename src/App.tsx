@@ -12,6 +12,11 @@ import ProductDetail from "@/pages/ProductDetail"
 import Cart from "@/pages/Cart"
 import Login from "@/pages/Login"
 import NotFound from "@/pages/NotFound"
+import Register from "@/pages/Register"
+import Shop from "@/pages/Shop"
+import Categories from "@/pages/Categories"
+import About from "@/pages/About"
+import Contact from "@/pages/Contact"
 
 // Admin Pages
 import AdminDashboard from "@/pages/Admin/Dashboard"
@@ -31,6 +36,11 @@ const App = () => (
           <BrowserRouter>
             <Routes>
               <Route path="/" element={<Home />} />
+              <Route path="/register" element={<Register />} />
+              <Route path="/shop" element={<Shop />} />
+              <Route path="/categories" element={<Categories />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/contact" element={<Contact />} />
               <Route path="/product/:id" element={<ProductDetail />} />
               <Route path="/cart" element={<Cart />} />
               <Route path="/login" element={<Login />} />
