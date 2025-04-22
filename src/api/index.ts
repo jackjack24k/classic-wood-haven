@@ -1,6 +1,7 @@
 
 import axios from 'axios';
 
+// API base URL - can be changed based on environment
 const API_URL = 'http://localhost:5000/api';
 
 // Create an axios instance with default config
@@ -117,9 +118,11 @@ export const ordersAPI = {
   getUserOrders: () => api.get('/orders/user'),
 };
 
-// Admin API endpoints
+// Admin API endpoints to match your backend routes
 export const adminAPI = {
   getDashboardStats: () => api.get('/admin/stats'),
+  
+  // User management
   getUsers: () => api.get('/admin/users'),
   getUserById: (id: string) => api.get(`/admin/users/${id}`),
   updateUser: (id: string, userData: any) => api.put(`/admin/users/${id}`, userData),
